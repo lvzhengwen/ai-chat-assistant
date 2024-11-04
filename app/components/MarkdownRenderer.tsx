@@ -4,11 +4,9 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 interface CodeProps {
-  node?: any
   inline?: boolean
   className?: string
   children?: React.ReactNode
-  [key: string]: any
 }
 
 export default function MarkdownRenderer({ content }: { content: string }) {
@@ -21,7 +19,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
         prose-li:text-gray-600 prose-table:border-gray-300
         max-w-none text-base leading-relaxed"
       components={{
-        code({ node, inline, className, children, ...props }: CodeProps) {
+        code({ inline, className, children, ...props }: CodeProps) {
           const match = /language-(\w+)/.exec(className || '')
           return !inline && match ? (
             <SyntaxHighlighter
@@ -39,7 +37,6 @@ export default function MarkdownRenderer({ content }: { content: string }) {
             </code>
           )
         },
-        // 自定义其他 Markdown 元素的渲染
         p: ({ children }) => <p className="my-3">{children}</p>,
         h1: ({ children }) => <h1 className="text-2xl font-bold my-4">{children}</h1>,
         h2: ({ children }) => <h2 className="text-xl font-bold my-3">{children}</h2>,

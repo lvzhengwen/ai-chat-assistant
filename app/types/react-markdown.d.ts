@@ -1,22 +1,31 @@
 declare module 'react-markdown' {
-  import React from 'react'
+  import { ComponentType, ReactNode } from 'react'
   
   export interface ReactMarkdownProps {
     children: string
     className?: string
-    components?: Record<string, React.ComponentType<any>>
+    components?: Record<string, ComponentType<{ children?: ReactNode }>>
   }
   
-  const ReactMarkdown: React.FC<ReactMarkdownProps>
+  const ReactMarkdown: ComponentType<ReactMarkdownProps>
   export default ReactMarkdown
 }
 
 declare module 'react-syntax-highlighter' {
-  const SyntaxHighlighter: React.ComponentType<any>
-  export { SyntaxHighlighter as Prism }
+  import { ComponentType } from 'react'
+  
+  interface SyntaxHighlighterProps {
+    children: string
+    style?: object
+    language?: string
+    PreTag?: string | ComponentType
+    className?: string
+  }
+  
+  export const Prism: ComponentType<SyntaxHighlighterProps>
 }
 
 declare module 'react-syntax-highlighter/dist/esm/styles/prism' {
-  const tomorrow: any
+  const tomorrow: object
   export { tomorrow }
 } 

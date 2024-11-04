@@ -233,7 +233,7 @@ export default function ChatPage() {
                           </div>
                         </div>
                       ) : (
-                        <div className={`markdown-body ${message.role === 'user' ? 'text-white' : ''}`}>
+                        <div className="markdown-body">
                           <MarkdownRenderer content={message.content} />
                         </div>
                       )
