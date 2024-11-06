@@ -2,7 +2,7 @@
 npm run build
 
 # 设置服务器信息
-$SERVER_IP = "47.95.176.227"
+$SERVER_IP = "你的服务器IP"
 $SERVER_PATH = "/www/wwwroot/next-app"
 
 # 压缩文件（需要安装 7-Zip）

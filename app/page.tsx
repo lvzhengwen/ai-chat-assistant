@@ -7,17 +7,23 @@ export default function Home() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="text-center">
           <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            与AI对话，探索无限可能
+            与AI小吕对话，探索无限可能
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             基于先进的人工智能技术，为您提供智能、自然、流畅的对话体验
           </p>
-          <div className="mt-10">
+          <div className="mt-10 flex justify-center gap-4">
             <Link 
               href="/chat"
               className="rounded-full bg-indigo-600 px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               开始对话
+            </Link>
+            <Link 
+              href="/search"
+              className="rounded-full bg-blue-500 px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
+              搜索视频
             </Link>
           </div>
         </div>
